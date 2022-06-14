@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="CN-zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>代码跳动</title>
+
+    <style id="style">
+    </style>
+</head>
+
+<body>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        *{
+            border-style: border-box;
+        }
+        *::before{
+            border-style: border-box;
+        }
+        *::after{
+            border-style: border-box;
+        }
+        #html{
+            word-break: break-all;
+        }
+        #div1{
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+        }
+        #div1::before{
+            content:'';
+            display:block;
+            position:absolute;
+        }
+        #div1::after{
+            content:'';
+            display:block;
+            position: absolute;
+        }
+
+        @media (max-width:500px) {
+            #html{
+                height: 50vh;
+                overflow: auto;
+                }
+            #div1Wrapper{
+                position: relative;
+                height: 50vh;
+            }
+            #div1{
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>  
+    <div id = "html"></div>
+
+    <div id="div1Wrapper">
+    <div id="div1"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
